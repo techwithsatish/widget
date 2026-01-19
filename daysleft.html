@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 { font-size: 48px; }
+  </style>
+</head>
+<body>
+  <h1 id="days"></h1>
+
+  <script>
+    const targetDate = new Date("2026-03-15");
+
+    function update() {
+      const today = new Date();
+      const diff = targetDate - today;
+      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("days").innerText =
+        days >= 0 ? days + " Days Left" : "Completed!";
+    }
+
+    update();
+  </script>
+</body>
+</html>
